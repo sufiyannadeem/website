@@ -63,6 +63,7 @@ pipeline {
                     export KUBECONFIG=/var/lib/jenkins/.kube/config
                     kubectl get nodes
                     kubectl apply -f deployment.yaml
+                    kubectl rollout restart deployment capstone-website
                 '''
             }
         }
