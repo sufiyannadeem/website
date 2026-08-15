@@ -54,7 +54,7 @@ pipeline {
         stage('Deploy') {
             when {
                 expression {
-                    return new Date().format('dd') == '15'
+                    return new Date().format('dd') == '25'
                 }
             }
 
