@@ -60,8 +60,9 @@ pipeline {
 
             steps {
                 sh '''
+                    export KUBECONFIG=/var/lib/jenkins/.kube/config
+                    kubectl get nodes
                     kubectl apply -f deployment.yaml
-                    kubectl rollout status deployment/capstone-website
                 '''
             }
         }
