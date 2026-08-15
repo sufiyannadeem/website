@@ -1,0 +1,27 @@
+version: 0.2
+
+phases:
+
+  install:
+    commands:
+      - echo "Installing dependencies"
+
+  pre_build:
+    commands:
+      - echo "Starting pre-build phase"
+      - echo "Git commit:"
+      - echo $CODEBUILD_RESOLVED_SOURCE_VERSION
+
+  build:
+    commands:
+      - echo "Build started on `date`"
+      - echo "Dockerfile detected"
+      - docker --version
+
+  post_build:
+    commands:
+      - echo "Build completed on `date`"
+
+artifacts:
+  files:
+    - '**/*'
