@@ -19,8 +19,8 @@ spec:
     spec:
       containers:
         - name: capstone-website
-
           image: sufiyannadeem/capstone-website:latest
+          imagePullPolicy: Always
 
           ports:
             - containerPort: 80
